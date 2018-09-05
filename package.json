@@ -14,7 +14,7 @@
     "package:windows": "electron-packager . gltf-viewer --overwrite --asar --platform=win32 --arch=ia32 --icon=assets/icons/glTF-Viewer.ico --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"glTF Viewer\"",
     "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/glTF-Viewer.icns --out=dist",
     "package:linux": "electron-packager . gltf-viewer --overwrite --asar --platform=linux --arch=x64 --icon=assets/icons/glTF-Viewer.png --out=dist",
-    "dev": "budo src/app.js:bundle.js --port 3000",
+    "dev": "budo src/app.js:bundle.js --host 0.0.0.0 --port 80",
     "dev:electron": "concurrently \"watchify src/app.js -o bundle.js\" \"npm start\"",
     "test": "node scripts/gen_test.js",
     "deploy": "npm run build && now --static && now alias && npm run clean",
